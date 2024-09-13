@@ -64,7 +64,7 @@ const Header = () => {
       <nav className="fixed lg:hidden bottom-0 left-0 right-0 z-20 px-2 sm:px-8 shadow-t overflow-hidden">
         <div className="bg-background px-2">
           <ul className="flex w-full justify-between items-center text-black-500">
-            {navItem.slice(0, navItem.length-1).map(({name, link, icon:Icon})=>(
+            {navItem.map(({name, link, icon:Icon})=>(
               <LinkScroll
                 activeClass="active"
                 to={link}

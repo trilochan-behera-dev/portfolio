@@ -14,7 +14,7 @@ function App() {
       <Skill/>
       <Experience />
       {/* <Project /> */}
-      <Certificates/>
+      {/* <Certificates/> */}
     </Layout>
 
   );
