@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-
 import {projects} from "../resources/resource"
 import { IoLogoGithub, IoMdArrowBack, IoMdArrowForward } from "react-icons/io"
 import { TbWorldWww } from "react-icons/tb"
@@ -8,7 +7,7 @@ import { TbWorldWww } from "react-icons/tb"
 import Slider from "react-slick";
 import { BiArrowBack } from "react-icons/bi";
 
-const Testimoni = () => {
+const ProjectCard = () => {
   const settings = {
     dots: true,
     customPaging: function (i) {
@@ -53,7 +52,7 @@ const Testimoni = () => {
       >
         {projects.map((project, index) => (
           <div className="px-3 flex items-stretch" key={index}>
-            <div className="border-2 border-gray-500 hover:border-primary transition-all rounded-lg p-8 flex flex-col min-h-[40vh] max-h-[40vh]">
+            <div className="border-2 border-gray-500 hover:border-primary transition-all rounded-lg p-5 flex flex-col min-h-[40vh] max-h-[40vh]">
               <div className="flex flex-col xl:flex-row w-full items-stretch xl:items-center">
                 <div className="flex order-2 xl:order-1">
                   <img
@@ -61,32 +60,32 @@ const Testimoni = () => {
                     height={40}
                     width={60}
                     alt="project icon"
+                    className="min-w-20 min-h-12 sm:min-w-20 sm:min-h-20"
                   />
                   <div className="flex flex-col ml-5 text-left">
-                    <p className="text-md text-primary capitalize font-medium italic">
+                    <p className="text-md text-primary capitalize font-medium italic ">
                       {project.title}
                     </p>
                     <div className="mt-2 flex flex-nowrap gap-4 items-center text-lg">
                                 {
                                     project?.gitLink ?
-                                        // <Link href={pro?.gitLink} target="_blank">
-                                            <p className='text-blue-400'> <IoLogoGithub /></p>
+                                        <a href={project?.gitLink} target="_blank">
+                                          <p className='text-blue-400'> <IoLogoGithub /></p>
+                                        </a>
                                          :
                                         <p className='text-gray-800'> <IoLogoGithub /></p>
                                 }
                                 {
                                     project?.webLink ?
-                                        // <Link href={pro?.webLink} target="_blank">
+                                        <a href={project?.webLink} target="_blank">
                                             <p className='text-blue-400'> <TbWorldWww /></p>
+                                            </a>
                                          :
                                         <p className='text-gray-800'> <TbWorldWww /></p>
                                 }
 
                             </div>
                   </div>
-                </div>
-                <div className="flex flex-none items-center ml-auto order-1 xl:order-2">
-                
                 </div>
               </div>
               <p className="mt-5 text-left text-ellipsis">“{project.desc}”.</p>
@@ -114,4 +113,4 @@ const Testimoni = () => {
   );
 };
 
-export default Testimoni;
+export default ProjectCard;

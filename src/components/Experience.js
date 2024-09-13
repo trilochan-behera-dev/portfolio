@@ -1,48 +1,43 @@
+import React, { useMemo } from "react";
 import { motion } from "framer-motion";
-import { LiaIndustrySolid } from 'react-icons/lia';
+import getScrollAnimation from "../utils/getScrollAnimation";
+import ScrollAnimationWrapper from "./Layout/ScrollAnimationWrapper";
+import Heading from "./Heading";
+import SubHeading from "./Heading/SubHeading";
+import ExperienceCards from "./ExperienceCards";
 
-export default function ExperienceCards() {
+const Experience = () => {
+  const scrollAnimation = useMemo(() => getScrollAnimation(), []);
+
   return (
-    <div className="w-full mx-auto md:my-8 grid sm:grid-cols-2 gap-2">
-      {/* Left card animation */}
-      <motion.div
-        className="h-80 w-full bg-primary/80 text-white-500 p-4 text-sm"
-        initial={{ x: '-10vw' }} // Start from the left side
-        animate={{ x: 0 }} // Move to the original position
-        transition={{ duration: 1.5, type: 'spring', stiffness: 20 }}
-      >
-        <div className="text-center text-4xl text-white">
-          <LiaIndustrySolid />
-        </div>
-        <p className="text-white-500 font-bold italic text-xl">Full Stack Developer</p>
-        <p className="text-white-500 font-medium">- Powr of You Ltd. - Fulltime</p>
-        <p className="text-white-500 font-medium">- Jun 2024 - Present · 3 months</p>
-        <p className="text-white-500 font-medium">- Bhubaneswar, Odisha, India · Remote</p>
-        <p className="text-white-500 font-semibold text-lg">Technology Develop -- </p>
-        <p className="text-white-500 font-medium">
-          - JavaScript, TypeScript, ReactJS, Redux, Redux Saga, Python, AWS Lambda, AWS Cognito, AWS DynamoDB, MySQL, Chrome Extension
-        </p>
-      </motion.div>
+    <div
+      className="max-w-screen-xl mt-8 mb-6 sm:mt-14 sm:mb-14 px-6 sm:px-8 lg:px-16 mx-auto"
+      id="experience"
+    >
+      <Heading>Experience</Heading>
+      <SubHeading>Professional Expertise</SubHeading>
+      <div className="grid  grid-cols-1 lg:grid-cols-2 gap-8 p  y-8 my-12 justify-center ">
+        <ScrollAnimationWrapper className="flex w-full justify-end">
+          <motion.div className="h-full w-full p-4 flex justify-center lg:justify-start" variants={scrollAnimation}>
+            <img
+              src="/expr.jpg"
+              alt="VPN Illustrasi"
+              layout="responsive"
+              quality={100}
+              height={414}
+              width={508}
+            />
+          </motion.div>
+        </ScrollAnimationWrapper>
 
-      {/* Right card animation */}
-      <motion.div
-        className="h-80 w-full bg-primary/20 md:mt-40 text-white-500 p-4 text-sm"
-        initial={{ x: '10vw' }} // Start from the right side
-        animate={{ x: 0 }} // Move to the original position
-        transition={{ duration: 1.5, type: 'spring', stiffness: 20 }}
-      >
-        <div className="text-center text-4xl text-white">
-          <LiaIndustrySolid color="black" />
-        </div>
-        <p className="text-black-600 font-bold italic text-xl">SDE - I</p>
-        <p className="text-black-600 font-medium">- HyScaler - Fulltime</p>
-        <p className="text-black-600 font-medium">- Nov 2021 - Jun 2024 · 2 yrs 8 months</p>
-        <p className="text-black-600 font-medium">- Bhubaneswar, Odisha, India · On-site</p>
-        <p className="text-black-600 font-semibold text-lg">Technology Develop -- </p>
-        <p className="text-black-600 font-medium">
-          - JavaScript, TypeScript, ReactJS, NextJS, NodeJS, ExpressJs, Go Lang, Redux, Redux Toolkit, Laravel, MongoDB, MySQL, GraphQL, Python, Django, Vue, Nuxt.js, Docker, Git, Cypress, Jest, Elastic Search
-        </p>
-      </motion.div>
+        <ScrollAnimationWrapper>
+          <motion.div className="flex flex-col items-end justify-center ml-auto w-full lg:w-full" variants={scrollAnimation}>
+            <ExperienceCards/>
+          </motion.div>
+        </ScrollAnimationWrapper>
+      </div>
     </div>
   );
-}
+};
+
+export default Experience;

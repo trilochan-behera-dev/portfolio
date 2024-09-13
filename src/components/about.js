@@ -4,13 +4,13 @@ import getScrollAnimation from "../utils/getScrollAnimation";
 import ScrollAnimationWrapper from "./Layout/ScrollAnimationWrapper";
 import LeftShow from "./Animation/LeftShow";
 import RightShow from "./Animation/RightShow";
+import { about } from "../resources/resource";
 
-const About = ({about}) => {
+const About = () => {
   const scrollAnimation = useMemo(() => getScrollAnimation(), []);
-
   return (
     <>      
-    <div className="relative w-full sm:flex hidden">
+       <div className="relative w-full sm:flex hidden max-w-screen-xl mx-auto ">
           <ScrollAnimationWrapper
             className="rounded-lg w-full grid grid-flow-row sm:grid-flow-row grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 divide-y-2 sm:divide-y-0 sm:divide-x-2 divide-gray-100 bg-background z-10">
             {about?.map((listUsers, index) => (
@@ -35,7 +35,7 @@ const About = ({about}) => {
             ))}
         </ScrollAnimationWrapper>
        </div>
-        <div className="sm:hidden grid divide-y-2 ">
+        <div className="sm:hidden grid divide-y-2 mx-4">
           <LeftShow>
             <div className=" grid grid-cols-2 divide-x-2">
                 {about.slice(0,2)?.map((listUsers, index) => (

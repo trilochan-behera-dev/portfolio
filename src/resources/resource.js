@@ -1,6 +1,8 @@
 import { CgBoy } from "react-icons/cg";
 import { FaCertificate, FaGraduationCap } from "react-icons/fa";
-import { IoMdSettings } from "react-icons/io";
+import { GrLinkedinOption } from "react-icons/gr";
+import { IoLogoGithub, IoLogoWhatsapp, IoMdSettings } from "react-icons/io";
+import { MdOutgoingMail } from "react-icons/md";
 import { RiCodeSSlashLine } from "react-icons/ri";
 
 export const title="Trilochan"
@@ -10,6 +12,13 @@ export const navItem = [
   { name: "Experience", link: "experience", icon: <FaGraduationCap /> },
   { name: "Projects", link: "project", icon: <RiCodeSSlashLine /> },
   { name: "Certificates", link: "certificate", icon: <FaCertificate /> },
+]
+
+export const mernStack = [
+  { name: "mongodb", link: "./Images/svg/mongodb.svg" },
+  { name: "express", link: "./Images/svg/expressjs.svg" },
+  { name: "react", link: "./Images/svg/react.svg" },
+  { name: "react", link: "./Images/svg/node.svg" },
 ]
 
 export const skills = [
@@ -303,6 +312,12 @@ export const skills = [
   // }
 ];
 
+export const socialIcon=[
+  {name:"gmail", link:"mailto:trilochanbeherak@gmail.com", icon:<MdOutgoingMail/>, color:"text-orange-600", clr:"#FF5733"},
+  {name:"linkedin", link:"https://www.linkedin.com/in/trilochanbehera/", icon:<GrLinkedinOption/>, color:"text-blue-700", clr:"#0a66c2"},
+  {name:"whatsapp", link:"https://wa.me/+919583998665", icon:<IoLogoWhatsapp/>, color:"text-green-500", clr:"#25d366"},
+  {name:"github", link:"https://github.com/trilochan-behera-dev", icon:<IoLogoGithub/>, color:"text-gray-900", clr:"#1b1e21"}
+]
 
 export const projects = [
   {
@@ -343,7 +358,7 @@ export const projects = [
     webLink: "",
     tech: ["Go Lang", "JavaScript", "My SQL"],
     image: "",
-    desc: "A Ecommerce web applications where all the men, women and trans person health products are listed when user have to answer some questions about their health and according to the report the app suggests the product when user can purchase.",
+    desc: "A public forum platform where user can share their thoughts and comment in discussions. It also has feature to like, share and comment in the meaningful and useful contents.",
   },
   {
     title: "Sexual Ecommerce platform",
@@ -351,7 +366,7 @@ export const projects = [
     webLink: "",
     tech: ["Next Commerce", "Spree", "Postgress SQL"],
     image: "",
-    desc: "A Ecommerce web applications where all the men, women and trans person health products are listed when user have to answer some questions about their health and according to the report the app suggests the product when user can purchase.",
+    desc: "A Ecommerce web applications where all the men, women and trans person health products are listed when user have to answer some questions about their health and as per the report the app suggests the product to purchase.",
   },
   {
     title: "TimeWise",
@@ -403,4 +418,34 @@ export const certificates = [
   { name: "IBM", link: "./Images/certificate/ibm.png" },
 ]
 
+export const about = [
+  {
+    name: "Experience",
+    number: "3yr",
+    icon:<FaGraduationCap />,
+  },
+  {
+    name: "Skills",
+    number: skills?.length,
+    icon:<IoMdSettings/>,
+  },
+  {
+    name: "Projects",
+    number: projects?.length,
+    icon: <RiCodeSSlashLine/>,
+  },
+  {
+    name: "Certificates",
+    number: projects?.length,
+    icon: <FaCertificate />,
+  },
+]
 
+export const slideImages = [
+  "Images/certificate/microsoft.jpg",
+  "Images/certificate/intel.png",
+  "Images/certificate/ibm.png",
+  "Images/certificate/google.png",
+  "Images/certificate/python.jpg",
+  "Images/certificate/mySql.jpg"
+];

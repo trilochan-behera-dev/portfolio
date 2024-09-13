@@ -59,7 +59,7 @@ const Contacts = ({onClose}) => {
           </form>
         </div>
 
-        <div className='absolute top-4 right-4 text-2xl text-primary font-bold' onClick={()=>onClose()}>
+        <div className='absolute top-4 right-4 text-2xl text-primary sm:text-white-500 font-bold cursor-pointer z-50' onClick={()=>onClose()}>
           <RxCrossCircled/>
         </div>
       </div>

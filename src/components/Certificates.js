@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import ScrollAnimationWrapper from "./Layout/ScrollAnimationWrapper";
 import Heading from "./Heading";
 import SubHeading from "./Heading/SubHeading";
+import { slideImages } from "../resources/resource";
 
 const Certificates = () => {
     const settings = {
@@ -48,15 +49,6 @@ const Certificates = () => {
         arrows: false,
     };
 
-    const slideImages = [
-        "Images/certificate/microsoft.jpg",
-        "Images/certificate/intel.png",
-        "Images/certificate/ibm.png",
-        "Images/certificate/google.png",
-        "Images/certificate/python.jpg",
-        "Images/certificate/mySql.jpg"
-    ];
-
     const motionVariants = {
         hidden: { opacity: 0, y: 20 },
         visible: { opacity: 1, y: 0 }
@@ -65,7 +57,7 @@ const Certificates = () => {
     return (
         <ScrollAnimationWrapper>
             
-            <div className="max-w-screen-xl mt-8 mb-6 sm:mt-14 sm:mb-14 px-6 sm:px-8 lg:px-16 mx-auto" id="certificates">
+            <div className="max-w-screen-xl mt-8 mb-6 sm:mt-14 sm:mb-14 px-6 sm:px-8 lg:px-16 mx-auto" id="certificate">
             <Heading>Certificates</Heading>
             <SubHeading>Online Leanings</SubHeading>
                         <div className="slider-container block">
@@ -79,7 +71,7 @@ const Certificates = () => {
                                         animate="visible"
                                         transition={{ duration: 0.5, delay: index * 0.1 }}
                                     >
-                                        <img className="object-cover h-full p-4" src={slide} alt={`slide-${index}`} />
+                                        <img className="object-cover p-4 h-48 w-full sm:h-full sm:w-full" src={slide} alt={`slide-${index}`} />
                                     </motion.div>
                                 ))}
                             </Slider>

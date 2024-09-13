@@ -1,24 +1,20 @@
 import './App.css';
 import Hero from './components/Hero';
 import Layout from './components/Layout/Layout';
-import Feature from './components/Feature';
-import Pricing from './components/Pricing';
+import Project from './components/Project';
 import Skill from './components/Skill';
 import Certificates from './components/Certificates';
-import { GrLinkedinOption } from 'react-icons/gr';
-import { MdCall, MdOutgoingMail } from 'react-icons/md';
-import { IoLogoGithub, IoLogoWhatsapp } from 'react-icons/io';
-import SocialMenu from './components/SocialMenus';
-
+import About from './components/about';
+import Experience from './components/Experience';
 function App() {
   return (
     <Layout>
       <Hero />
+      <About/>
       <Skill/>
-      <Feature />
-      <Pricing />
+      <Experience />
+      <Project />
       <Certificates/>
-      
     </Layout>
 
   );

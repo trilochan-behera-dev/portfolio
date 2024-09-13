@@ -11,15 +11,14 @@ const Skills = ({ skill, onClose }) => {
           <h6 className="text-lg font-semibold uppercase text-primary-light">{skill.name}</h6>
           </div>
           <div className='flex gap-2'>
-          {Array.from({length:skill?.rating},i=>(
-                          <img
-                          src="./assets/Icon/stars.svg"
-                          height={12}
-                          width={12}
-                          alt="rating"
-                        />
-                      ))
-                    }
+            {Array.from({length:skill?.rating},i=>(
+                <img
+                  src="./assets/Icon/stars.svg"
+                  height={12}
+                  width={12}
+                  alt="rating"
+                />
+            ))}
           </div>
         </div>
         <ul className="list-decimal px-4 font-medium text-sm leading-8 mb-4">
@@ -27,7 +26,7 @@ const Skills = ({ skill, onClose }) => {
         </ul>
        </div>
         <div className="flex justify-end" onClick={onClose} >
-        <ButtonOutline>Close</ButtonOutline>
+          <ButtonOutline>Close</ButtonOutline>
         </div>
       </div>
   );

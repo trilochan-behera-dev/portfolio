@@ -20,6 +20,7 @@ const Header = () => {
 
   return (
     <>
+      {/* Desktop Navigation */}
       <header
         className={"fixed top-0 w-full  z-30 bg-background transition-all " +
           (scrollActive ? " shadow-md pt-0" : " pt-4")
@@ -47,7 +48,7 @@ const Header = () => {
                   }
               >
                   {name}
-            </LinkScroll>
+              </LinkScroll>
             ))}
           </ul>
           <div className="col-start-10 col-end-12 font-medium flex justify-end items-center">
@@ -87,7 +88,8 @@ const Header = () => {
           </ul>
         </div>
       </nav>
-      {/* End Mobile Navigation */}
+
+       {/* Contact Us modal */}
       <Modal isOpen={isModalOpen} onClose={closeModal}>
           <Contacts onClose={closeModal}/>
       </Modal>
