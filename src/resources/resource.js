@@ -425,14 +425,14 @@ export const about = [
     icon:<FaGraduationCap />,
   },
   {
-    name: "Skills",
-    number: skills?.length,
-    icon:<IoMdSettings/>,
-  },
-  {
     name: "Projects",
     number: projects?.length,
     icon: <RiCodeSSlashLine/>,
+  },
+  {
+    name: "Skills",
+    number: skills?.length,
+    icon:<IoMdSettings/>,
   },
   {
     name: "Certificates",
