@@ -1,3 +1,17 @@
+import { CgBoy } from "react-icons/cg";
+import { FaCertificate, FaGraduationCap } from "react-icons/fa";
+import { IoMdSettings } from "react-icons/io";
+import { RiCodeSSlashLine } from "react-icons/ri";
+
+export const title="Trilochan"
+export const navItem = [
+  { name: "About", link: "about", icon: <CgBoy /> },
+  { name: "Skills", link: "skill", icon: <IoMdSettings /> },
+  { name: "Experience", link: "experience", icon: <FaGraduationCap /> },
+  { name: "Projects", link: "project", icon: <RiCodeSSlashLine /> },
+  { name: "Certificates", link: "certificate", icon: <FaCertificate /> },
+]
+
 export const skills = [
   { 
     name: "Html", 

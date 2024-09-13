@@ -4,8 +4,9 @@ import "./contact.css"
 import { GrLinkedinOption } from 'react-icons/gr';
 import { MdCall, MdOutgoingMail } from 'react-icons/md';
 import { IoLogoGithub, IoLogoWhatsapp } from 'react-icons/io';
+import { RxCrossCircled } from 'react-icons/rx';
 
-const Contacts = () => {
+const Contacts = ({onClose}) => {
   return (
     <div className="relative rounded-md p-1  h-full min-h-[400px] mx-4 md:mx-auto bg-white flex flex-col justify-between bg-white-500">
        <div class="form">
@@ -56,7 +57,11 @@ const Contacts = () => {
               <ButtonOutline>Send</ButtonOutline>
               </div>
           </form>
-      </div>
+        </div>
+
+        <div className='absolute top-4 right-4 text-2xl text-primary font-bold' onClick={()=>onClose()}>
+          <RxCrossCircled/>
+        </div>
       </div>
       </div>
   );
