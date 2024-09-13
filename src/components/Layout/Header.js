@@ -61,8 +61,8 @@ const Header = () => {
       </header>
 
       {/* Mobile Navigation */}
-      <nav className="fixed lg:hidden bottom-0 left-0 right-0 z-20 px-2 sm:px-8 shadow-t ">
-        <div className="bg-background sm:px-3">
+      <nav className="fixed lg:hidden bottom-0 left-0 right-0 z-20 px-2 sm:px-8 shadow-t overflow-hidden">
+        <div className="bg-background px-2">
           <ul className="flex w-full justify-between items-center text-black-500">
             {navItem.map(({name, link, icon:Icon})=>(
               <LinkScroll
@@ -75,7 +75,7 @@ const Header = () => {
                   setActiveLink(link);
                 }}
                 className={
-                  "mx-1 sm:mx-2 p-2 flex flex-col items-center text-[0.75rem] border-t-2 transition-all " +
+                  "mx-1 sm:mx-2 py-2 px-1 flex flex-col items-center text-[0.75rem] border-t-2 transition-all " +
                   (activeLink === link
                     ? "  border-primary text-primary font-bold"
                     : " border-transparent")
