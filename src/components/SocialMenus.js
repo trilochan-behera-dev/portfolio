@@ -14,7 +14,7 @@ const SocialMenu = () => {
   };
 
   return (
-    <div className={`menu ${active ? "active" : ""} flex items-center justify-center h-screen`}>
+    <div className={`menu ${active ? "active" : ""} flex items-center justify-center h-screen pr-4`}>
       <div className="toggle cursor-pointer" onClick={toggleMenu}>
         <div name="share-social" className="text-4xl text-primary border-primary">T</div>
         

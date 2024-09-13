@@ -63,7 +63,7 @@ const Testimoni = () => {
                     alt="project icon"
                   />
                   <div className="flex flex-col ml-5 text-left">
-                    <p className="text-lg  text-primary capitalize font-medium italic">
+                    <p className="text-md text-primary capitalize font-medium italic">
                       {project.title}
                     </p>
                     <div className="mt-2 flex flex-nowrap gap-4 items-center text-lg">
@@ -95,7 +95,7 @@ const Testimoni = () => {
         ))}
       </Slider>
       <div className="flex w-full items-center justify-end">
-        <div className="flex flex-none justify-between w-auto mt-14">
+        <div className="flex flex-none justify-between w-auto  mt-4 sm:mt-14">
           <div
             className="mx-4 flex items-center justify-center h-8 w-8 rounded-full bg-white border-primary border hover:bg-primary hover:text-white-500 transition-all text-primary cursor-pointer"
             onClick={sliderRef?.slickPrev}

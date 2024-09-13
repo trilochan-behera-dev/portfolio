@@ -18,9 +18,9 @@ const Experience = () => {
     >
       <Heading>Experience</Heading>
       <SubHeading>Professional Expertise</SubHeading>
-      <div className="grid grid-flow-row sm:grid-flow-col grid-cols-1 sm:grid-cols-2 gap-8 p  y-8 my-12 justify-center">
+      <div className="grid  grid-cols-1 lg:grid-cols-2 gap-8 p  y-8 my-12 justify-center ">
         <ScrollAnimationWrapper className="flex w-full justify-end">
-          <motion.div className="h-full w-full p-4" variants={scrollAnimation}>
+          <motion.div className="h-full w-full p-4 flex justify-center lg:justify-start" variants={scrollAnimation}>
             <img
               src="/expr.jpg"
               alt="VPN Illustrasi"
@@ -34,7 +34,6 @@ const Experience = () => {
         <ScrollAnimationWrapper>
 
         <motion.div className="flex flex-col items-end justify-center ml-auto w-full lg:w-full" variants={scrollAnimation}>
-          {/* <Timeline/> */}
           <Experiences/>
         </motion.div>
         </ScrollAnimationWrapper>

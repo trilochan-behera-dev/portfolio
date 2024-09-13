@@ -31,8 +31,8 @@ const Header = () => {
         }
       >
         <nav className="max-w-screen-xl px-6 sm:px-8 lg:px-16 mx-auto grid grid-flow-col py-3 sm:py-4">
-          <div className="absolute font-bold text-lg sm:text-xl lg:text-2xl col-start-1 col-end-2 flex items-center text-primary">
-          <SocialMenu/>
+          <div className="font-bold text-lg sm:text-xl lg:text-2xl col-start-1 col-end-2 flex items-center text-primary">
+            Trilochan
           </div>
           <ul className="hidden lg:flex col-start-4 col-end-8 text-black-500  items-center">
             <LinkScroll
@@ -126,9 +126,11 @@ const Header = () => {
               Certificates
             </LinkScroll>
           </ul>
-          <div className="col-start-10 col-end-12 font-medium flex justify-end items-center" onClick={()=>setModalOpen(true)}>
-          <ButtonOutline>Hire Me</ButtonOutline>
-          </div>
+
+            <div className="col-start-10 col-end-12 font-medium flex justify-end items-center">
+            <SocialMenu/>
+              <ButtonOutline onClick={()=>setModalOpen(true)}>Hire Me</ButtonOutline>
+         </div>
         </nav>
       </header>
       {/* Mobile Navigation */}
