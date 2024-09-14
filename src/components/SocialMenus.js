@@ -16,7 +16,7 @@ const SocialMenu = () => {
   return (
     <div className={`menu ${active ? "active" : ""} flex items-center justify-center h-screen pr-4`}>
       <div className="toggle cursor-pointer" onClick={toggleMenu}>
-        <div name="share-social" className="text-xl text-primary border-primary rotate-180"><FaExternalLinkSquareAlt/></div>
+        <div name="share-social" className="text-xl text-primary border-primary"><FaExternalLinkSquareAlt/></div>
       </div>
       <ul>
         {

@@ -54,7 +54,7 @@ const Header = () => {
           <div className="col-start-10 col-end-12 font-medium flex justify-end items-center">
             <SocialMenu/>
             <div onClick={()=>setModalOpen(true)}>
-              <ButtonOutline>Hire Me</ButtonOutline>
+              <ButtonOutline>Contact Me</ButtonOutline>
             </div>
           </div>
         </nav>

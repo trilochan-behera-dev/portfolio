@@ -91,6 +91,16 @@
     border-radius: 5px;
     transition: 0.3s;
   }
+  /* Placeholder text styling */
+  input::placeholder {
+    color: #FFF; /* Change to your desired color */
+    opacity: 1; /* Ensure the opacity is fully visible */
+  }
+
+  textarea::placeholder {
+    color: #FFF; /* Change to your desired color */
+    opacity: 1;
+  }
   
   textarea.input {
     padding: 0.8rem 1.2rem;
