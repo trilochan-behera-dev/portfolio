@@ -28,7 +28,7 @@ const Contacts = ({ onClose }) => {
       });
       Toast.fire({
         icon: "warning",
-        title: 'Please enter you good name and email address'
+        title: 'Please enter your good name and email address'
       });
     }else{
       const templateParams = {
