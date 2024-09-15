@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
-import './contact.css';
 import { RxCrossCircled } from 'react-icons/rx';
 import { socialIcon } from '../../resources/resource';
+import './contact.css';
 import ButtonOutline from '../Button/ButtonOutline.';
+import emailjs from 'emailjs-com';
+import Swal from 'sweetalert2';
 
 const Contacts = ({ onClose }) => {
   const [email, setEmail] = useState('');
@@ -13,44 +15,71 @@ const Contacts = ({ onClose }) => {
     e.preventDefault();
 
     if(!email || !name ){
-      alert('Please enter you good name and email address');
+      const Toast = Swal.mixin({
+        toast: true,
+        position: "top-end",
+        showConfirmButton: false,
+        timer: 3000,
+        timerProgressBar: true,
+        didOpen: (toast) => {
+          toast.onmouseenter = Swal.stopTimer;
+          toast.onmouseleave = Swal.resumeTimer;
+        }
+      });
+      Toast.fire({
+        icon: "warning",
+        title: 'Please enter you good name and email address'
+      });
     }else{
-      const formData = new FormData();
-      formData.append('email', email);
-      formData.append('subject', `Thank you ${name} for contacting me!`);
-      formData.append('message', message);
+      const templateParams = {
+        from_name:"Trilochan Behera",
+        from_email: email,
+        to_name: name, // You can customize this
+        message: message,
+      };
   
-      try {
-        const response = await fetch(
-          process.env.REACT_APP_EMAIL_URL,
-          {
-            method: 'POST',
-            mode: 'no-cors', // Try this to bypass strict CORS policies
-            body: formData,
-  
-          }
-        );
-  
-        console.log("response",response)
-  
-        if (response.ok || response.type === 'opaque') {
-          // Email likely sent (since we get an opaque response with no-cors)
-          alert(`Thank you ${name} for contacting me!`);
+      // Replace 'YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', 'YOUR_USER_ID' with your EmailJS credentials
+      emailjs.send('service_08fd5vt', 'template_yab20ai', templateParams, 'fBaAhjyardf3P269t')
+        .then((result) => {
+          // Show success message
+          const Toast = Swal.mixin({
+            toast: true,
+            position: "top-end",
+            showConfirmButton: false,
+            timer: 3000,
+            timerProgressBar: true,
+            didOpen: (toast) => {
+              toast.onmouseenter = Swal.stopTimer;
+              toast.onmouseleave = Swal.resumeTimer;
+            }
+          });
+          Toast.fire({
+            icon: "success",
+            title: "Thank you " + name + " for contacting me!"
+          });
           onClose();
           setEmail("");
           setName("");
           setMessage("");
-        } else {
-          // Handle potential errors if the request fails
-          alert('Failed to send email.');
-        }
-      } catch (error) {
-        console.error('Error:', error);
-        alert('Error sending email.');
-      }
+        }, (error) => {
+          const Toast = Swal.mixin({
+            toast: true,
+            position: "top-end",
+            showConfirmButton: false,
+            timer: 3000,
+            timerProgressBar: true,
+            didOpen: (toast) => {
+              toast.onmouseenter = Swal.stopTimer;
+              toast.onmouseleave = Swal.resumeTimer;
+            }
+          });
+          Toast.fire({
+            icon: "error",
+            title: "Something went Wrong!!!"
+          });
+        });
     }
-  };
-
+  }
   return (
     <div className="relative rounded-md p-1 h-full min-h-[400px] mx-4 md:mx-auto bg-white flex flex-col justify-between">
       <div className="form">
@@ -89,7 +118,6 @@ const Contacts = ({ onClose }) => {
                 value={name}
                 onChange={(e) => setName(e.target.value)}
               />
-              <span>Good Name</span>
             </div>
             <div className="input-container">
               <input
@@ -100,7 +128,6 @@ const Contacts = ({ onClose }) => {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
               />
-              <span>Email</span>
             </div>
             <div className="input-container textarea">
               <textarea
@@ -110,7 +137,6 @@ const Contacts = ({ onClose }) => {
                 value={message}
                 onChange={(e) => setMessage(e.target.value)}
               ></textarea>
-              <span>Message</span>
             </div>
             <div className="flex justify-end">
               <ButtonOutline>Send</ButtonOutline>
