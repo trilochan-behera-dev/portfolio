@@ -4,7 +4,7 @@ html{
 
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Inria Serif", serif;
+  font-family: 'Inria Serif', -apple-system, BlinkMacSystemFont, serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
