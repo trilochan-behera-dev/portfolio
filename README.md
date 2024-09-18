@@ -12,6 +12,7 @@ Step into the digital realm with my personalized portfolio page, a harmonious fu
 - 🎞 **Animation:** Framer Motion
 - 🚀 **Language:** JavaScript
 - 🔄 **State Management:** Context API
+- 🔄 **Email:** EMail.js
 
 ## Key Features 🚀
 
