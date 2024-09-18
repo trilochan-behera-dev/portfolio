@@ -1,6 +1,6 @@
 # Portfolio 🌐
 
-Step into the digital realm with my personalized portfolio page, a harmonious fusion of cutting-edge technologies designed to showcase my skills, projects, and creativity. Crafted with precision, this portfolio page seamlessly integrates Next.js 13, TypeScript, Tailwind CSS, and Framer Motion to create a visually appealing and interactive platform that adapts seamlessly to various devices.
+Step into the digital realm with my personalized portfolio page, a harmonious fusion of cutting-edge technologies designed to showcase my skills, projects, and creativity. Crafted with precision, this portfolio page seamlessly integrates React 18, JavaScript, Tailwind CSS, and Framer Motion to create a visually appealing and interactive platform that adapts seamlessly to various devices.
 
 
 ## Technologies Used 🛠
