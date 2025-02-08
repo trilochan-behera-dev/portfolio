@@ -20,7 +20,7 @@ const Experience = () => {
         <ScrollAnimationWrapper className="flex w-full justify-end">
           <motion.div className="h-full w-full p-4 flex justify-center lg:justify-start" variants={scrollAnimation}>
             <img
-              src="/images/svg/software.svg"
+              src="./Images/svg/software.svg"
               alt="professional"
               layout="responsive"
               quality={100}
