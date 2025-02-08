@@ -430,8 +430,15 @@ export const certificates = [
   { name: "IBM", link: "./Images/certificate/ibm.png" },
 ]
 
-function calculateExperience(startDate) {
+const calculateExperience = (startDate) => {
+  // Ensure startDate is in a valid format, e.g., 'YYYY-MM-DD'
   const start = new Date(startDate);
+
+  // Check if the startDate is valid
+  if (isNaN(start.getTime())) {
+    return "3.5 yr";  // Default experience if the date is invalid
+  }
+
   const today = new Date();
 
   let years = today.getFullYear() - start.getFullYear();
@@ -439,23 +446,24 @@ function calculateExperience(startDate) {
   let days = today.getDate() - start.getDate();
 
   if (days < 0) {
-      months -= 1;
-      days += new Date(today.getFullYear(), today.getMonth(), 0).getDate();
+    months -= 1;
+    days += new Date(today.getFullYear(), today.getMonth(), 0).getDate();
   }
 
   if (months < 0) {
-      years -= 1;
-      months += 12;
+    years -= 1;
+    months += 12;
   }
 
   const totalExperience = years + (months / 12) + (days / 365);
   return `${totalExperience.toFixed(1)} yr`;
 }
 
+
 export const about = [
   {
     name: "Experience",
-    number: calculateExperience('11-08-2021'),
+    number: calculateExperience('2021-11-08'),
     icon:<FaGraduationCap />,
   },
   {
