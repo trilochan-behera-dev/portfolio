@@ -23,30 +23,6 @@ export const mernStack = [
 
 export const skills = [
   { 
-    name: "Html", 
-    link: "./Images/svg/html.svg", 
-    rating: 5,
-    desc: [
-      "Proficient in creating accessible and semantic HTML structures.",
-      "Experienced in implementing responsive designs using HTML5.",
-      "Strong understanding of HTML5 APIs and elements.",
-      "Skilled in optimizing HTML for SEO best practices.",
-      "Familiar with integrating HTML with various templating engines and CMS platforms."
-    ]
-  },
-  { 
-    name: "css", 
-    link: "./Images/svg/css.svg", 
-    rating: 5,
-    desc: [
-      "Skilled in crafting responsive layouts using CSS3 and Flexbox/Grid.",
-      "Experienced in utilizing CSS preprocessors like SASS/LESS.",
-      "Familiar with modern CSS features like custom properties and animations.",
-      "Proficient in creating cross-browser compatible styles.",
-      "Experienced in theming and styling complex user interfaces."
-    ]
-  },
-  { 
     name: "javascript", 
     link: "./Images/svg/javascript.svg", 
     rating: 5,
@@ -97,7 +73,7 @@ export const skills = [
   { 
     name: "TypeScript", 
     link: "./Images/svg/typescript.svg", 
-    rating: 3, 
+    rating: 4, 
     desc: [
       "Proficient in using TypeScript to enhance JavaScript code with static types.",
       "Experienced in defining interfaces and types to improve code reliability and readability.",
@@ -191,15 +167,15 @@ export const skills = [
     ]
   },
   { 
-    name: "GoLang", 
-    link: "./Images/svg/go.svg", 
-    rating: 3, 
+    name: "React Native", 
+    link: "./Images/svg/react.svg", 
+    rating: 4, 
     desc: [
-      "Basic experience with Go for building efficient and concurrent applications.",
-      "Familiar with Go's standard library and its use in web development.",
-      "Skilled in writing and managing Go routines for concurrent processing.",
-      "Experienced in using Go for building and deploying microservices.",
-      "Knowledgeable in Go's tooling and best practices for code quality."
+      "Experienced in building cross-platform mobile apps using React Native.",
+      "Proficient in using React Native components, hooks, and state management with Redux.",
+      "Familiar with React Navigation for handling screen transitions and deep linking.",
+      "Hands-on experience integrating REST APIs and third-party libraries.",
+      "Skilled in optimizing app performance and debugging using Flipper and React DevTools."
     ]
   },
   { 
@@ -238,30 +214,66 @@ export const skills = [
       "Knowledgeable in integrating Git with CI/CD pipelines."
     ]
   },
-  { 
-    name: "docker", 
-    link: "./Images/svg/docker.svg", 
-    rating: 3, 
-    desc: [
-      "Basic experience with Docker for containerizing applications.",
-      "Familiar with creating and managing Docker images and containers.",
-      "Skilled in using Docker Compose for multi-container applications.",
-      "Experienced in integrating Docker with development and deployment workflows.",
-      "Knowledgeable in optimizing Docker images for performance and security."
-    ]
-  },
-  { 
-    name: "cypress", 
-    link: "./Images/svg/cypress.svg", 
-    rating: 4, 
-    desc: [
-      "Proficient in using Cypress for end-to-end testing of web applications.",
-      "Experienced in writing and maintaining Cypress test cases.",
-      "Skilled in setting up and configuring Cypress for various testing environments.",
-      "Familiar with integrating Cypress with CI/CD pipelines for automated testing.",
-      "Knowledgeable in debugging and troubleshooting Cypress tests."
-    ]
-  },
+  // { 
+  //   name: "GoLang", 
+  //   link: "./Images/svg/go.svg", 
+  //   rating: 3, 
+  //   desc: [
+  //     "Basic experience with Go for building efficient and concurrent applications.",
+  //     "Familiar with Go's standard library and its use in web development.",
+  //     "Skilled in writing and managing Go routines for concurrent processing.",
+  //     "Experienced in using Go for building and deploying microservices.",
+  //     "Knowledgeable in Go's tooling and best practices for code quality."
+  //   ]
+  // },
+    // { 
+  //   name: "Html", 
+  //   link: "./Images/svg/html.svg", 
+  //   rating: 5,
+  //   desc: [
+  //     "Proficient in creating accessible and semantic HTML structures.",
+  //     "Experienced in implementing responsive designs using HTML5.",
+  //     "Strong understanding of HTML5 APIs and elements.",
+  //     "Skilled in optimizing HTML for SEO best practices.",
+  //     "Familiar with integrating HTML with various templating engines and CMS platforms."
+  //   ]
+  // },
+  // { 
+  //   name: "css", 
+  //   link: "./Images/svg/css.svg", 
+  //   rating: 5,
+  //   desc: [
+  //     "Skilled in crafting responsive layouts using CSS3 and Flexbox/Grid.",
+  //     "Experienced in utilizing CSS preprocessors like SASS/LESS.",
+  //     "Familiar with modern CSS features like custom properties and animations.",
+  //     "Proficient in creating cross-browser compatible styles.",
+  //     "Experienced in theming and styling complex user interfaces."
+  //   ]
+  // },
+  // { 
+  //   name: "docker", 
+  //   link: "./Images/svg/docker.svg", 
+  //   rating: 3, 
+  //   desc: [
+  //     "Basic experience with Docker for containerizing applications.",
+  //     "Familiar with creating and managing Docker images and containers.",
+  //     "Skilled in using Docker Compose for multi-container applications.",
+  //     "Experienced in integrating Docker with development and deployment workflows.",
+  //     "Knowledgeable in optimizing Docker images for performance and security."
+  //   ]
+  // },
+  // { 
+  //   name: "cypress", 
+  //   link: "./Images/svg/cypress.svg", 
+  //   rating: 4, 
+  //   desc: [
+  //     "Proficient in using Cypress for end-to-end testing of web applications.",
+  //     "Experienced in writing and maintaining Cypress test cases.",
+  //     "Skilled in setting up and configuring Cypress for various testing environments.",
+  //     "Familiar with integrating Cypress with CI/CD pipelines for automated testing.",
+  //     "Knowledgeable in debugging and troubleshooting Cypress tests."
+  //   ]
+  // },
   // { 
   //   name: "Laravel", 
   //   link: "./Images/svg/laravel.svg", 
@@ -418,21 +430,43 @@ export const certificates = [
   { name: "IBM", link: "./Images/certificate/ibm.png" },
 ]
 
+function calculateExperience(startDate) {
+  const start = new Date(startDate);
+  const today = new Date();
+
+  let years = today.getFullYear() - start.getFullYear();
+  let months = today.getMonth() - start.getMonth();
+  let days = today.getDate() - start.getDate();
+
+  if (days < 0) {
+      months -= 1;
+      days += new Date(today.getFullYear(), today.getMonth(), 0).getDate();
+  }
+
+  if (months < 0) {
+      years -= 1;
+      months += 12;
+  }
+
+  const totalExperience = years + (months / 12) + (days / 365);
+  return `${totalExperience.toFixed(1)} yr`;
+}
+
 export const about = [
   {
     name: "Experience",
-    number: "3yr",
+    number: calculateExperience('11-08-2021'),
     icon:<FaGraduationCap />,
-  },
-  {
-    name: "Projects",
-    number: projects?.length,
-    icon: <RiCodeSSlashLine/>,
   },
   {
     name: "Skills",
     number: skills?.length,
     icon:<IoMdSettings/>,
+  },
+  {
+    name: "Projects",
+    number: projects?.length,
+    icon: <RiCodeSSlashLine/>,
   },
   {
     name: "Certificates",
