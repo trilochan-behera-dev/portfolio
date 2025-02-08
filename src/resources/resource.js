@@ -430,7 +430,7 @@ export const certificates = [
   { name: "IBM", link: "./Images/certificate/ibm.png" },
 ]
 
-const calculateExperience = (startDate) => {
+export const calculateExperience = (startDate) => {
   // Ensure startDate is in a valid format, e.g., 'YYYY-MM-DD'
   const start = new Date(startDate);
 
@@ -455,8 +455,20 @@ const calculateExperience = (startDate) => {
     months += 12;
   }
 
+  // If days are 10 or more, add one month to the month count
+  if (days >= 10) {
+    months += 1;
+  }
+
+  // If months exceed 12, convert to years
+  if (months >= 12) {
+    years += Math.floor(months / 12);
+    months = months % 12;
+  }
+
+  // Format the output to show years, months, and round appropriately
   const totalExperience = years + (months / 12) + (days / 365);
-  return `${totalExperience.toFixed(1)} yr`;
+  return `${totalExperience.toFixed(1)} yrs`;
 }
 
 
