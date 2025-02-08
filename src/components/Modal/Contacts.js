@@ -5,14 +5,17 @@ import './contact.css';
 import ButtonOutline from '../Button/ButtonOutline.';
 import emailjs from 'emailjs-com';
 import Swal from 'sweetalert2';
+import { AiOutlineLoading3Quarters } from 'react-icons/ai';
 
 const Contacts = ({ onClose }) => {
   const [email, setEmail] = useState('');
   const [name, setName] = useState('');
   const [message, setMessage] = useState('');
+  const [apiCall, setApiCall] = useState(false);
 
   const sendEmail = async (e) => {
     e.preventDefault();
+    setApiCall(true);
 
     if(!email || !name ){
       const Toast = Swal.mixin({
@@ -30,6 +33,7 @@ const Contacts = ({ onClose }) => {
         icon: "warning",
         title: 'Please enter your good name and email address'
       });
+     setApiCall(false);
     }else{
       const templateParams = {
         from_name:"Trilochan Behera",
@@ -57,6 +61,7 @@ const Contacts = ({ onClose }) => {
             icon: "success",
             title: "Thank you " + name + " for contacting me!"
           });
+          setApiCall(false);
           onClose();
           setEmail("");
           setName("");
@@ -77,6 +82,7 @@ const Contacts = ({ onClose }) => {
             icon: "error",
             title: "Something went Wrong!!!"
           });
+          setApiCall(false);
         });
     }
   }
@@ -139,7 +145,7 @@ const Contacts = ({ onClose }) => {
               ></textarea>
             </div>
             <div className="flex justify-end">
-              <ButtonOutline>Send</ButtonOutline>
+             <ButtonOutline> {!apiCall ? "Send" : <div className='py-0.5 px-2.5 animate-spin'><AiOutlineLoading3Quarters /></div>  }</ButtonOutline>
             </div>
           </form>
         </div>
