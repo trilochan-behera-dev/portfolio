@@ -37,11 +37,12 @@ const Contacts = ({ onClose }) => {
     }else{
       const templateParams = {
         from_name:"Trilochan Behera",
-        from_email: email,
+        from_email: email.toLowerCase(),
         to_name: name, // You can customize this
         message: message,
       };
-  
+
+      if(apiCall) return
       // Replace 'YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', 'YOUR_USER_ID' with your EmailJS credentials
       emailjs.send('service_08fd5vt', 'template_yab20ai', templateParams, 'fBaAhjyardf3P269t')
         .then((result) => {
